@@ -21,17 +21,19 @@
 ## Conclusions
 - Simple Linear regression was attempted and it was found that due to complexity of data set the model was overfitting
 - Initial attempts to reduce the complexity was made using RFE (Recursive feature elimination), which improved the model a bit but overfitting was still present
-- **Ridge regression** 
-- - With ridge regression [GrLivArea, OverallQual, LotArea, Condition2_PosN, YearBuilt] were found to be top 5 parameters impacting house price
-- - There were total 60 parameters (limited by RFE) which impacted the house price
-- - R2 of 86% and Adjusted R2 of 83% was observed on test data which was class to 88% R2 found on training data
-- - RMSE of ~23K was observed which is good considering house prices are in millions
-- - Hyper parameter value: Best alpha for Ridge Regression: {'alpha': 2.1}
-- **Lasso Regrssion**
-- - With Lasso regression only 29 parameter were found to have non-zero coefficient, which improved the interpretability of the model
-- - R2 and Adjusted R2 were observed similar to Ridge model i.e 86% and 83% respectively
-- - RMSE observed is also similare to Ridge model i.e. 23k
-- - Hyper parameter value: Lasso(alpha=0.00075)
+**Ridge Regression** 
+  - With ridge regression [GrLivArea, OverallQual, LotArea, Condition2_PosN, YearBuilt, TotalBsmtSF, TotalBsmtSF, TotalBsmtSF, PoolArea_Yes, BsmtFullBath] were found to be top 10 parameters impacting house price
+  - There were total 60 parameters (limited by RFE) which impacted the house price
+  - R2 of 86% and Adjusted R2 of 83% was observed on test data which was class to 88% R2 found on training data
+  - RMSE of ~23K was observed which is good considering house prices are in millions
+  - Hyper parameter value: Best alpha for Ridge Regression: {'alpha': 2.1}
+**Lasso Regression**
+  - With Lasso regression only 29 parameter were found to have non-zero coefficient, which improved the interpretability of the model
+  - [GrLivArea, OverallQual, LotArea, Condition2_PosN, YearBuilt, OverallCond, GarageCars, BsmtFullBath, TotalBsmtSF, PoolArea_Yes] were found to be top 5 parameters impacting house price
+  - Condition2_PosN is in top 5 parameters but with negative coefficient implying inverse proportionality with sale price
+  - R2 and Adjusted R2 were observed similar to Ridge model i.e 86% and 83% respectively
+  - RMSE observed is also similare to Ridge model i.e. 23k
+  - Hyper parameter value: Lasso(alpha=0.00075)
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
