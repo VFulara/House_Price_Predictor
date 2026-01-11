@@ -1,52 +1,52 @@
 # Project Name
-> Outline a brief description of your project.
+> House Price Predictore
 
 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Conclusions](#conclusions)
-* [Acknowledgements](#acknowledgements)
+
 
 <!-- You can include any other section that is pertinent to your problem -->
 
 ## General Information
-- Provide general information about your project here.
-- What is the background of your project?
-- What is the business probem that your project is trying to solve?
-- What is the dataset that is being used?
+- A US-based housing company named Surprise Housing has decided to enter the Australian market.
+- The company is looking at prospective properties to buy to enter the market. 
+- This project analyses the data to model the house prices and the factors which affects the house prices in Australia.
+- train.csv data is used which holds the house prices data and various attributes of the house
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 ## Conclusions
-- Conclusion 1 from the analysis
-- Conclusion 2 from the analysis
-- Conclusion 3 from the analysis
-- Conclusion 4 from the analysis
+- Simple Linear regression was attempted and it was found that due to complexity of data set the model was overfitting
+- Initial attempts to reduce the complexity was made using RFE (Recursive feature elimination), which improved the model a bit but overfitting was still present
+- **Ridge regression** 
+- - With ridge regression [GrLivArea, OverallQual, LotArea, Condition2_PosN, YearBuilt] were found to be top 5 parameters impacting house price
+- - There were total 60 parameters (limited by RFE) which impacted the house price
+- - R2 of 86% and Adjusted R2 of 83% was observed on test data which was class to 88% R2 found on training data
+- - RMSE of ~23K was observed which is good considering house prices are in millions
+- - Hyper parameter value: Best alpha for Ridge Regression: {'alpha': 2.1}
+- **Lasso Regrssion**
+- - With Lasso regression only 29 parameter were found to have non-zero coefficient, which improved the interpretability of the model
+- - R2 and Adjusted R2 were observed similar to Ridge model i.e 86% and 83% respectively
+- - RMSE observed is also similare to Ridge model i.e. 23k
+- - Hyper parameter value: Lasso(alpha=0.00075)
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
 ## Technologies Used
-- library - version 1.0
-- library - version 2.0
-- library - version 3.0
+- Pandas
+- scikit learn
+- matplotlib
+- sns
 
 <!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
 
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- References if any...
-- This project was based on [this tutorial](https://www.example.com).
+
 
 
 ## Contact
 Created by [@githubusername] - feel free to contact me!
 
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
